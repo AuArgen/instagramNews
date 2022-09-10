@@ -5,7 +5,8 @@ import(
 	"net/http"
 	"time"
 	"strings"
-
+	// "database/sql"
+	// _ "github.com/lib/pq"
 	"github.com/gocolly/colly"
 	
 )
@@ -42,6 +43,7 @@ func scrapPage(url string) {
 	}
 
 func home_page(w http.ResponseWriter, r * http.Request) {
+	ans = "</div> <h1>Seaerch information, pleace wait or update page!</h1><hr>"
 	scrapPage("http://knews.kg")
 	fmt.Fprintf(w,"<h1> Go is working!</h1> <hr/> <a href=/contacts/>Contacts</a> <hr><div style='display:none;'>",ans)
 }
@@ -57,5 +59,7 @@ func handleRequest() {
 }
 
 func main() {
+
+    
 	handleRequest()
 }
